@@ -13,6 +13,11 @@
 		7A22EB262755E367009974D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A22EB252755E367009974D7 /* Assets.xcassets */; };
 		7A22EB292755E367009974D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A22EB272755E367009974D7 /* LaunchScreen.storyboard */; };
 		7A22EB312755E3D5009974D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A22EB302755E3D5009974D7 /* GoogleService-Info.plist */; };
+		7AAA57612760D26800F8AE3E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA57602760D26800F8AE3E /* TabBar.swift */; };
+		7AAA57632760D28600F8AE3E /* ShowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA57622760D28600F8AE3E /* ShowStore.swift */; };
+		7AAA57652760D2E500F8AE3E /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA57642760D2E500F8AE3E /* CartVC.swift */; };
+		7AAA57672760D37200F8AE3E /* TikTok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA57662760D37200F8AE3E /* TikTok.swift */; };
+		7AAA576A2760D66900F8AE3E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA57692760D66900F8AE3E /* Models.swift */; };
 		7AAE3CAC2755E51E00B56ED6 /* WelcomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE3CAB2755E51E00B56ED6 /* WelcomScreen.swift */; };
 		7AAE3CAE2755E56000B56ED6 /* Signupscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE3CAD2755E56000B56ED6 /* Signupscreen.swift */; };
 		7AAE3CB02755E58C00B56ED6 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE3CAF2755E58C00B56ED6 /* LoginScreen.swift */; };
@@ -33,6 +38,11 @@
 		7A22EB282755E367009974D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A22EB2A2755E367009974D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A22EB302755E3D5009974D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7AAA57602760D26800F8AE3E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		7AAA57622760D28600F8AE3E /* ShowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStore.swift; sourceTree = "<group>"; };
+		7AAA57642760D2E500F8AE3E /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		7AAA57662760D37200F8AE3E /* TikTok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTok.swift; sourceTree = "<group>"; };
+		7AAA57692760D66900F8AE3E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		7AAE3CAB2755E51E00B56ED6 /* WelcomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomScreen.swift; sourceTree = "<group>"; };
 		7AAE3CAD2755E56000B56ED6 /* Signupscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signupscreen.swift; sourceTree = "<group>"; };
 		7AAE3CAF2755E58C00B56ED6 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -88,6 +98,8 @@
 		7A22EB1B2755E366009974D7 /* BakeryCake */ = {
 			isa = PBXGroup;
 			children = (
+				7AAA57682760D53C00F8AE3E /* TabBarCustom */,
+				7AAA57602760D26800F8AE3E /* TabBar.swift */,
 				7AF6BD972755FEDF001E39DC /* Manager */,
 				7AAE3CCF2755EED600B56ED6 /* SetUp */,
 				7AAE3CC92755EC3300B56ED6 /* UsersScreen */,
@@ -95,8 +107,19 @@
 				7A22EB222755E366009974D7 /* Main.storyboard */,
 				7A22EB252755E367009974D7 /* Assets.xcassets */,
 				7A22EB272755E367009974D7 /* LaunchScreen.storyboard */,
+				7AAA57622760D28600F8AE3E /* ShowStore.swift */,
+				7AAA57642760D2E500F8AE3E /* CartVC.swift */,
+				7AAA57662760D37200F8AE3E /* TikTok.swift */,
+				7AAA57692760D66900F8AE3E /* Models.swift */,
 			);
 			path = BakeryCake;
+			sourceTree = "<group>";
+		};
+		7AAA57682760D53C00F8AE3E /* TabBarCustom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBarCustom;
 			sourceTree = "<group>";
 		};
 		7AAE3CC72755EBE300B56ED6 /* Others */ = {
@@ -262,13 +285,18 @@
 			files = (
 				7A22EB1D2755E366009974D7 /* AppDelegate.swift in Sources */,
 				7AAE3CAE2755E56000B56ED6 /* Signupscreen.swift in Sources */,
+				7AAA57652760D2E500F8AE3E /* CartVC.swift in Sources */,
 				7AAE3CB02755E58C00B56ED6 /* LoginScreen.swift in Sources */,
 				7AAE3CAC2755E51E00B56ED6 /* WelcomScreen.swift in Sources */,
 				7AAE3CC62755E81300B56ED6 /* profileScreen.swift in Sources */,
 				7AAE3CB62755E60A00B56ED6 /* Setupbutton.swift in Sources */,
 				7AAE3CB42755E5E600B56ED6 /* Choosebutton.swift in Sources */,
 				7A22EB1F2755E366009974D7 /* SceneDelegate.swift in Sources */,
+				7AAA57632760D28600F8AE3E /* ShowStore.swift in Sources */,
+				7AAA57672760D37200F8AE3E /* TikTok.swift in Sources */,
 				7AAE3CB82755E62A00B56ED6 /* textfiled.swift in Sources */,
+				7AAA57612760D26800F8AE3E /* TabBar.swift in Sources */,
+				7AAA576A2760D66900F8AE3E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
