@@ -34,7 +34,7 @@ class LoginScreen: UIViewController {
     let titleLabel: UILabel = {
         let title = UILabel()
         title.backgroundColor = .clear
-        title.text = "Welcome back!"
+        title.text = NSLocalizedString("Welcome back!", comment: "")
         title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
         title.textColor = UIColor(#colorLiteral(red: 0.9175770879, green: 0.7899500132, blue: 0.8629837036, alpha: 1))
         title.textAlignment = .center
@@ -45,14 +45,14 @@ class LoginScreen: UIViewController {
     
     let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.setupTextField(with: NSAttributedString(string: "Email",
+        textField.setupTextField(with: NSAttributedString(string: NSLocalizedString("Email", comment: ""),
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]))
         return textField
     }()
     let passwordTextField: UITextField = {
         let textField = UITextField()
         
-        textField.setupTextField(with: NSAttributedString(string: "Password",
+        textField.setupTextField(with: NSAttributedString(string: NSLocalizedString("Password", comment: ""),
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]))
         textField.isSecureTextEntry = true
         return textField
@@ -60,7 +60,7 @@ class LoginScreen: UIViewController {
     
     let createAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Log in")
+        button.setupButton(with: NSLocalizedString("Log in", comment: ""))
         return button
     }()
     
@@ -157,13 +157,13 @@ class LoginScreen: UIViewController {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .wrongPassword:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "you entered a wrong password", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!", message: NSLocalizedString("you entered a wrong password", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .invalidEmail:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!", message: NSLocalizedString("are sure you typed the email correctly?", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
@@ -196,12 +196,12 @@ class LoginScreen: UIViewController {
                     }
                 }
                 
-//               // let vc = StoreTabBar()
-//                let nav = UINavigationController()
-//                nav.viewControllers = [vc]
-//                nav.modalPresentationStyle = .fullScreen
-//                nav.modalTransitionStyle = .flipHorizontal
-//                self.present(nav, animated: true, completion: nil)
+                let vc = StoreTabBar()
+                let nav = UINavigationController()
+                nav.viewControllers = [vc]
+                nav.modalPresentationStyle = .fullScreen
+                nav.modalTransitionStyle = .flipHorizontal
+                self.present(nav, animated: true, completion: nil)
                 
 //       self.navigationController?.pushViewController(StoreTabBar(),animated: true)
 

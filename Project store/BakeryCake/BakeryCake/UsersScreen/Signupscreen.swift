@@ -5,6 +5,7 @@
 //  Created by Kholod Sultan on 25/04/1443 AH.
 //
 
+
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -30,7 +31,7 @@ class SignupScreen: UIViewController {
     let titleLabel: UILabel = {
         let title = UILabel()
         title.backgroundColor = .clear
-        title.text = "Creating an account🤦🏻‍♂️👩🏻."
+        title.text = NSLocalizedString("Creating an account🤦🏻‍♂️👩🏻.", comment: "")
         title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
         title.textColor = .black
         title.textAlignment = .center
@@ -41,14 +42,14 @@ class SignupScreen: UIViewController {
     
     let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.setupTextField(with: NSAttributedString(string: "Email",
+        textField.setupTextField(with: NSAttributedString(string: NSLocalizedString("Email", comment: ""),
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]))
         return textField
     }()
     let passwordTextField: UITextField = {
         let textField = UITextField()
         
-        textField.setupTextField(with: NSAttributedString(string: "Password",
+        textField.setupTextField(with: NSAttributedString(string: NSLocalizedString("Password", comment: ""),
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]))
         textField.isSecureTextEntry = true
         return textField
@@ -57,20 +58,20 @@ class SignupScreen: UIViewController {
     let nameTextField: UITextField = {
         let textField = UITextField()
         
-        textField.setupTextField(with: NSAttributedString(string: "Name",
+        textField.setupTextField(with: NSAttributedString(string: NSLocalizedString("Name", comment: ""),
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]))
         return textField
     }()
     
     let createAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Create account")
+        button.setupButton(with:NSLocalizedString("Create account", comment: ""))
         return button
     }()
     
     let typeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Select type")
+        button.setupButton(with: NSLocalizedString("Select type", comment: ""))
         return button
     }()
     
@@ -82,7 +83,7 @@ class SignupScreen: UIViewController {
     
     
     @objc func tapChooseMenuItem(_ sender: UIButton) {//3
-      dropDown.dataSource = ["Customer", "Manager"]//4
+        dropDown.dataSource = [NSLocalizedString("Customer", comment: ""), NSLocalizedString("Manager", comment: "")]//4
       dropDown.anchorView = sender //5
       dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
       dropDown.show() //7
@@ -176,9 +177,9 @@ class SignupScreen: UIViewController {
         if !email.isEmpty && !password.isEmpty && !name.isEmpty{
             signupUserUsing(email: email, password: password, name: name)
         }else{
-            let alert = UIAlertController(title: "Oops!", message: "please make sure name, email and password are not empty.", preferredStyle: .alert)
+            let alert = UIAlertController(title: NSLocalizedString("Oops!" , comment: ""), message: NSLocalizedString("please make sure name, email and password are not empty.", comment: ""), preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel, handler: nil))
             
             present(alert, animated: true)
         }
@@ -197,13 +198,13 @@ class SignupScreen: UIViewController {
                     
                 case .invalidEmail:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!", message: NSLocalizedString("are sure you typed the email correctly?", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .weakPassword:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "Your password is weak, please make sure it's strong.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!", message: NSLocalizedString("you entered a wrong password", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
@@ -232,9 +233,9 @@ class SignupScreen: UIViewController {
                     }
                 }
                 
-              //  let vc = StoreTabBar()
+                let vc = StoreTabBar()
                 let nav = UINavigationController()
-              //  nav.viewControllers = [vc]
+                nav.viewControllers = [vc]
                 nav.modalPresentationStyle = .fullScreen
                 nav.modalTransitionStyle = .flipHorizontal
                 self.present(nav, animated: true, completion: nil)

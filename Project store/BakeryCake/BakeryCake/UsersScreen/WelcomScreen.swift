@@ -32,7 +32,7 @@ class WelcomeScreen: UIViewController {
     let titleLabel: UILabel = {
       let title = UILabel()
         title.backgroundColor = .clear
-        title.text = "Welcome"
+        title.text = NSLocalizedString( "Welcome", comment: "")
         title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
         title.textColor = UIColor(#colorLiteral(red: 0.906963408, green: 0.7648715973, blue: 0.9058654904, alpha: 1) )
         title.textAlignment = .center
@@ -43,7 +43,7 @@ class WelcomeScreen: UIViewController {
     let subTitle: UILabel = {
       let subTitle = UILabel()
         subTitle.backgroundColor = .clear
-        subTitle.text = "share your moments with one pices Cake🧁"
+        subTitle.text = NSLocalizedString("share your moments with one pices Cake🧁", comment: "")
         subTitle.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         subTitle.textColor = UIColor( #colorLiteral(red: 0.05837889761, green: 0.04676074535, blue: 0.0519445911, alpha: 1))
         subTitle.textAlignment = .center
@@ -53,13 +53,13 @@ class WelcomeScreen: UIViewController {
     
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Sign up")
+        button.setupButton(with: NSLocalizedString("Sign up", comment: ""))
         return button
     }()
     
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Log in")
+        button.setupButton(with:NSLocalizedString("Log in", comment: ""))
         return button
     }()
     
