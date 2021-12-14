@@ -15,7 +15,7 @@ class LoginScreen: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.9256234765, green: 0.7424535155, blue: 0.8250460029, alpha: 1))
+        view.backgroundColor = UIColor(  #colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -26,8 +26,9 @@ class LoginScreen: UIViewController {
     let illustrationImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "signup")
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         image.clipsToBounds = true
+        image.layer.cornerRadius = 50
         return image
     }()
     
@@ -35,8 +36,8 @@ class LoginScreen: UIViewController {
         let title = UILabel()
         title.backgroundColor = .clear
         title.text = NSLocalizedString("Welcome back!", comment: "")
-        title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        title.textColor = UIColor(#colorLiteral(red: 0.9175770879, green: 0.7899500132, blue: 0.8629837036, alpha: 1))
+        title.font = UIFont.systemFont(ofSize: 29, weight: .medium)
+        title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
         return title
@@ -66,7 +67,7 @@ class LoginScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.727360785, green: 0.9017360806, blue: 0.8943203092, alpha: 1))
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
         setupViews()
     }
     
@@ -128,10 +129,10 @@ class LoginScreen: UIViewController {
         
         containerView.addSubview(illustrationImage)
         
-        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 0).isActive             = true
+        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -15).isActive             = true
         illustrationImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive     = true
         illustrationImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive  = true
-        illustrationImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive             = true
+        illustrationImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 15).isActive             = true
         
     }
     

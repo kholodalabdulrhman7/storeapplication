@@ -7,11 +7,14 @@
 
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
     var cake: Cake?
-    
+    let db = Firestore.firestore()
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TabelViewCell.cell, for: indexPath) as! TabelViewCell
         
@@ -138,6 +141,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         let alert = UIAlertController(title: "نجاح", message: "تم اضافة طلبك بنجاح، سيتم تسليم الطلب خلال ساعتين", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: { action in
             cartArr.append(self.cake!)
+            self.addProductToCart()
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -152,8 +156,24 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
           TableView.dataSource = self
           TableView.rowHeight = 150
       }
+    
+    
+    func addProductToCart() {
+        self.db.collection("cart").document().setData([
+            "userId": Auth.auth().currentUser?.uid ?? "",
+//            "productId": FieldValue.arrayUnion([cake?.uid ?? ""]),
+            "productId": cake?.uid ?? "",
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                
+            }
+        }
+    }
+    
+    
      
     
 }
-
-

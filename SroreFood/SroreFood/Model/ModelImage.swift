@@ -19,8 +19,6 @@ struct Cake {
     var cookby: String
     var uid: String
 }
-
-
 var cakes: Array<Cake> = []
 var purchasedProducts: Array<Cake> = []
 var cartArr: [Cake] = []

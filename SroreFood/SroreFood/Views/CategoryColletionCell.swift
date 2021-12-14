@@ -36,11 +36,12 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         setupSizeForCellContent()
     }
     
-    func sertCell() {
-        imageView.image = UIImage(named: "5")
-        name.text = "Cake"
-       
+    func sertCell(category: Category) {
+        imageView.image = category.image
+        name.text = category.name
     }
+    
+    
     private func setupCell() {
         self.backgroundColor = .white
         self.addSubview(imageView)
@@ -48,7 +49,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 13
         self.layer.masksToBounds = true
     }
-
+    
     private func setupSizeForCellContent() {
         imageView.frame = CGRect(x: 10, y: (self.frame.size.height / 2) - 15, width: 30, height: 30)
         imageView.layer.cornerRadius = 15
@@ -58,5 +59,3 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
 }
-
-

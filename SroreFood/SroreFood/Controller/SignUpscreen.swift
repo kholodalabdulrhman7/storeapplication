@@ -19,7 +19,7 @@ class SignupScreen: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.727360785, green: 0.9017360806, blue: 0.8943203092, alpha: 1) )
+        view.backgroundColor = UIColor(  #colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -30,8 +30,8 @@ class SignupScreen: UIViewController {
     let titleLabel: UILabel = {
         let title = UILabel()
         title.backgroundColor = .clear
-        title.text = NSLocalizedString("Creating an account🤦🏻‍♂️👩🏻.", comment: "")
-        title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
+        title.text = NSLocalizedString("Creating an account.", comment: "")
+        title.font = UIFont.systemFont(ofSize: 28, weight: .medium)
         title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
@@ -76,7 +76,7 @@ class SignupScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.9256234765, green: 0.7424535155, blue: 0.8250460029, alpha: 1))
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
         setupViews()
     }
     

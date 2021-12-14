@@ -12,7 +12,7 @@ class WelcomeScreen: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.8981755376, green: 1, blue: 0.9623885751, alpha: 1))
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -33,8 +33,8 @@ class WelcomeScreen: UIViewController {
       let title = UILabel()
         title.backgroundColor = .clear
         title.text = NSLocalizedString( "Welcome", comment: "")
-        title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        title.textColor = UIColor(#colorLiteral(red: 0.906963408, green: 0.7648715973, blue: 0.9058654904, alpha: 1) )
+        title.font = UIFont.systemFont(ofSize: 29, weight: .medium)
+        title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
         return title
@@ -43,7 +43,7 @@ class WelcomeScreen: UIViewController {
     let subTitle: UILabel = {
       let subTitle = UILabel()
         subTitle.backgroundColor = .clear
-        subTitle.text = NSLocalizedString("share your moments with one pices Cake🧁", comment: "")
+        subTitle.text = NSLocalizedString("From Saudi Hands to Saudis 🧁", comment: "")
         subTitle.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         subTitle.textColor = UIColor( #colorLiteral(red: 0.05837889761, green: 0.04676074535, blue: 0.0519445911, alpha: 1))
         subTitle.textAlignment = .center
@@ -66,7 +66,7 @@ class WelcomeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(#colorLiteral(red: 1, green: 0.8280280828, blue: 0.9201447368, alpha: 1))
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
         
         setupViews()
     }
@@ -117,9 +117,9 @@ class WelcomeScreen: UIViewController {
         
         containerView.addSubview(illustrationImage)
         illustrationImage.translatesAutoresizingMaskIntoConstraints = false
-        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -30).isActive             = true
-        illustrationImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15).isActive     = true
-        illustrationImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive  = true
+        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -15).isActive             = true
+        illustrationImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive     = true
+        illustrationImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive  = true
         illustrationImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 15).isActive             = true
         
     }
@@ -135,12 +135,5 @@ class WelcomeScreen: UIViewController {
     }
 }
 
-extension String {
-    func locaz() -> String {
-        return NSLocalizedString(self, tableName: "localized", bundle: .main, value: self, comment: self)
-    }
-    
-    
-}
 
 

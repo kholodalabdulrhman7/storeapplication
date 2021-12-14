@@ -13,12 +13,21 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var isFilter = false
     var products: [Cake] = []
     
+    var selectedCategoryIndex: Int?
+    
+    var categories: [Category] = [
+        Category(image: UIImage(named: "1"), name: NSLocalizedString("Cakes🧁", comment: "")),
+        Category(image: UIImage(named: "2"), name: NSLocalizedString("Jucies🍹", comment: "")),
+        Category(image: UIImage(named: "3"), name: NSLocalizedString("Pastries🥐", comment: ""))
+
+    ]
+    
     var categoriesCollection: UICollectionView!
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoriesCollection {
-            return 5
+            return categories.count
         } else {
             return isFilter ? filteredData.count : products.count
 
@@ -32,7 +41,8 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 return UICollectionViewCell()
             }
             
-            cell.sertCell()
+            cell.sertCell(category: categories[indexPath.row])
+            
          return cell
         }else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.ID, for: indexPath) as? CollectionCell else {
@@ -192,7 +202,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     private func getProducts(completion: @escaping([Cake])->()) {
-        db.collection("products").getDocuments { (snapshot, err) in
+        db.collection("products").whereField("type", isEqualTo: "0").getDocuments { (snapshot, err) in
             if let error = err {
                 print("error getting documents \(error)")
             } else {
@@ -314,4 +324,3 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
 
    
-

@@ -4,7 +4,6 @@
 //
 //  Created by Kholod Sultan on 08/05/1443 AH.
 //
-
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
@@ -19,7 +18,7 @@ func getCurrentUserFromFirestore(completion: @escaping(String)->()) {
     
     docRef.getDocument { (document, error) in
         if let document = document, document.exists {
-           // /Users/kholodsultan/BakeryCake/BakeryCake/Models/FireBaseOperation.swift
+          
             let type = document.get("type") as? String
             
             print(type ?? "")
@@ -30,4 +29,43 @@ func getCurrentUserFromFirestore(completion: @escaping(String)->()) {
         }
     }
 }
+
+func uploadImage(image: UIImage, completion: @escaping (_ url: String?) -> Void) {
+    let storageRef = Storage.storage().reference().child("img\(Date().millisecondsSince1970).png")
+    if let uploadData = image.jpegData(compressionQuality: 0.6){
+        storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+            if error != nil {
+                print("error")
+                completion(nil)
+            } else {
+                
+                storageRef.downloadURL(completion: { (url, error) in
+                    
+                    print(url?.absoluteString)
+                    completion(url?.absoluteString)
+                })
+            }
+        }
+    }
+}
+
+//func addCategory(image: UIImage, categoryName: String ) {
+//
+//    uploadImage(image: image) { url in
+//
+//        db.collection("categories").document().setData([
+//            "name": categoryName,
+//            "url": url,
+//        ]) { err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//              //  self.successMessage()
+//            }
+//        }
+//
+//    }
+//
+//}
 

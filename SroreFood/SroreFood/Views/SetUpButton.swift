@@ -10,10 +10,10 @@ import UIKit
 
 extension UIButton {
   open func setupButton(with title: String) {
-    backgroundColor = UIColor(#colorLiteral(red: 0.9625198245, green: 0.8791962862, blue: 1, alpha: 1) )
+      backgroundColor = .black
     setTitle(title, for: .normal)
     setTitleColor(UIColor(#colorLiteral(red: 0.727360785, green: 0.9017360806, blue: 0.8943203092, alpha: 1)), for: .normal)
-    layer.cornerRadius = 30
+    layer.cornerRadius = 20
     clipsToBounds = true
   }
   open func setupButton(using image: String) {

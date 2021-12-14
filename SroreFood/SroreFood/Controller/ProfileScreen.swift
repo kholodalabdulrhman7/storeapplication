@@ -19,7 +19,7 @@ class ProfileScreen: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))
+        view.backgroundColor = UIColor(  #colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -51,7 +51,7 @@ class ProfileScreen: UIViewController {
     
     let signOutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Sign out")
+        button.setupButton(with: NSLocalizedString("Sign out", comment: ""))
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -60,8 +60,8 @@ class ProfileScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor( #colorLiteral(red: 1, green: 0.8937570453, blue: 0.9861807227, alpha: 1) )
-        title = "Settings"
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
+        title = NSLocalizedString("Settings", comment: "")
         self.navigationController?.navigationBar.prefersLargeTitles = false
         setUpLabels()
         
